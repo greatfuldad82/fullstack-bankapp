@@ -1,6 +1,6 @@
 function Spa() {
 
-    const [users, setUsers] = React.useState([{name:'alex',email:'greatful_dad@icloud.com',password:'chortlethem',balance: 25, }]);
+    const [users, setUsers] = React.useState([{name:'alex',email:'greatful_dad@icloud.com',password:'conquest-adores',balance: 25, }]);
   
     return (
       <HashRouter>

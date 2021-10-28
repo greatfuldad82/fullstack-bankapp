@@ -17,7 +17,7 @@ function AllData(){
   
   return (
     <>
-      <div class="container bg-warning ">
+      <div class="container bg-info ">
         <div class="row">
           <div class="col-sm">
             <h3>Name</h3><br/>

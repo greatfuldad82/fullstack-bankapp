@@ -8,7 +8,7 @@ function Deposit(){
     console.log('Balance: ' + ctx.users[0].balance);
     setDeposit('');
     setShow(true);
-  }//clearForm
+  }
 
   function validate(field){
     if(Number(field)<=0){
@@ -44,7 +44,7 @@ function Deposit(){
 
   return (
     <Card
-      bgcolor="success"
+      bgcolor="info"
       header="DEPOSIT"
       status={status}
       body={show ? (

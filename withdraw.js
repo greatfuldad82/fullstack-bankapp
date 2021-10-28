@@ -28,7 +28,7 @@ function Withdraw(){
       return false;
     }
     return true;
-  }//validate
+  }
 
   function handleWithdraw(){
     console.log('withdrew: ' + withdraw);
@@ -43,7 +43,7 @@ function Withdraw(){
 
   return (
     <Card
-      bgcolor="danger"
+      bgcolor="warning"
       header="WITHDRAW"
       status={status}
       body={show ? (
