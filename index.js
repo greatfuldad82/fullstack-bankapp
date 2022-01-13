@@ -1,24 +1,37 @@
-function Spa() {
+var express = require('express');
+var app = express();
+var cors = require('cors');
 
-    const [users, setUsers] = React.useState([{name:'alex',email:'greatful_dad@icloud.com',password:'conquest-adores',balance: 25, }]);
-  
-    return (
-      <HashRouter>
-        <NavBar/>
-        <UserContext.Provider value={{users, setUsers}}>
-          <div className="container" style={{padding: "20px"}}>
-            <Route path="/" exact component={Home} />
-            <Route path="/CreateAccount/" component={CreateAccount} />
-            <Route path="/deposit/" component={Deposit} />
-            <Route path="/withdraw/" component={Withdraw} />
-            <Route path="/alldata/" component={AllData} />
-          </div>
-        </UserContext.Provider>      
-      </HashRouter>
-    );
-  }
-  
-  ReactDOM.render(
-    <Spa/>,
-    document.getElementById('root')
-  );
+//used to serve static files from public directory 
+app.use(express.static('public'));
+app.use(cors());
+
+//create user account 
+app.get('/account/create/:name/:email/:password', function (req, res) {
+    res.send({
+        name: req.params.name,
+        email: req.params.email,
+        password: req.params.password
+    });
+});
+
+//login user
+app.get('/account/login/:email/:password', function (req, res) {
+    res.send({
+        email: req.params.email,
+        password: req.params.password
+    });
+});
+
+//all accounts
+app.get('/account/all', function (req, res) {
+    res.send({
+        name: 'peter',
+        email: 'peter@mit.edu',
+        password: 'secret'
+    });
+});
+
+var port = 3000;
+app.listen(port);
+console.log('running on port: ' + port);
